@@ -36,12 +36,36 @@ ventana.moveBy(120,300);
 ventana.moveTo(120, 300);
 
 //window.location.href - Nos muestra la URL de nuestra pagina
-const href = window.location.href;
+// const href = window.location.href;
 //window.location.hostname - Nos muestra el dominio de la pagina
-const hostname = window.location.hostname;
+// const hostname = window.location.hostname;
 //window.location.pathname - Nos muestra donde estamos hubicado
-const pathname = window.location.pathname;
+// const pathname = window.location.pathname;
 //window.location.protocol - Nos muestra que protocolo estamos usando (http: o https)
-const protocol = window.location.protocol;
+// const protocol = window.location.protocol;
 //window.location.assign() - Esto nosw carga un nuevo documento
 const assign = window.location.assign("https://youtube.com");
+
+//Ejercicio
+let alto  = window.screen.availHeight;
+let ancho = window.screen.availWidth;
+let comprar = confirm(`El alto es: ${alto}, el ancho es: ${ancho}`);
+
+if (comprar) {
+    alert("Comprar realizada excitosamente");
+}else{
+    alert("Comprar rechazada");
+}
+
+//Ejercicio 2
+const href = window.location.href;
+const hostname = window.location.hostname;
+const pathname = window.location.pathname;
+const protocol = window.location.protocol;
+
+let html = `Protocolo: <b>${protocol}</b><br>`;
+html += `Hostname: <b>${hostname}</b><br>`;
+html += `Pathname: <b>${pathname}</b><br>`;
+html += `URL: <b>${href}</b><br>`;
+
+document.write(html);
