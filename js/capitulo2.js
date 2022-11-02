@@ -1,10 +1,10 @@
-const button = document.querySelector(".button");
+const buttonn = document.querySelector(".button");
 const container = document.querySelector(".container");
 const container2 = document.querySelector(".container-2");
 
 //------------------------------------------------------------Event Mouse------------------------------------------------------------------
 //Evento click
-button.addEventListener("click", (e)=>{
+buttonn.addEventListener("click", (e)=>{
     alert("Hola, como estás");
     e.stopPropagation();
 });
@@ -68,3 +68,101 @@ clearTimeout(temporizador);
 const intervalo = setInterval(() =>{ document.write("Hola "); }, 2000);
 //Evento claerIntervalo - Esto hace que acabe el temporizado de setIntervalo
 clearInterval(intervalo);
+
+//Ejercicio
+const nombre = document.getElementById("nombre");
+const email = document.getElementById("email");
+const materia = document.getElementById("materia");
+const boton = document.getElementById("btnEnviar");
+const resultado = document.querySelector(".resultado");
+
+boton.addEventListener("click", (e) =>{
+    e.preventDefault();
+    let error = verificarCampor();
+    if (error[0]) {
+        resultado.innerHTML = error[1];
+        resultado.classList.add("red");
+        resultado.classList.remove("green");
+    }else{
+        resultado.innerHTML = "Solicitud enviada correctamente";
+        resultado.classList.add("green");
+        resultado.classList.remove("red");
+    }
+});
+
+const verificarCampor = () =>{
+    let error =  [];
+    if (nombre.value.length < 5 || nombre.value.length > 40){
+        error[0] = true;
+        error[1] = "El nombre es invalido";
+        return error;
+    }else if (email.value.length < 5 || email.value.length > 40 ||
+              email.value.indexOf("@") == -1 || email.value.indexOf(".") == -1){
+        error[0] = true;
+        error[1] = "Email no es valido";
+        return error;
+    }else if (materia.value.length < 4 || materia.value.length > 40){
+        error[0] = true;
+        error[1] = "Materia no existe";
+        return error;
+    }
+    error[0] = false;
+    return error;
+}
+
+//Ejercicio 2
+const button = document.querySelector(".btnConfirmar");
+const contenedor = document.querySelector(".grid-container");
+
+let alumnos = [{
+    nombre: "Denilson Prescott",
+    email: "denilpv22@gmail.com",
+    materia: "Qumica"
+},{
+    nombre: "Meliza Prescott",
+    email: "meli@hotmail.com",
+    materia: "Matematica"
+},{
+    nombre: "Andres Medina",
+    email: "andre@gmail.com",
+    materia: "Filosofia"
+},{
+    nombre: "Juan Pertuz",
+    email: "juanda@hotmail.com",
+    materia: "Arte"
+},{
+    nombre: "Anyely Prescott",
+    email: "anyely@gmail.com",
+    materia: "Literatura"
+}];
+
+for (alumno in alumnos) {
+    let datos = alumnos[alumno];
+    let nombre = datos["nombre"];
+    let email = datos["email"];
+    let materia = datos["materia"];
+    let htmlCode = `
+    <div class="grid-item nombre">${nombre}</div>
+    <div class="grid-item email">${email}</div>
+    <div class="grid-item materia">${materia}</div>
+    <div class="grid-item semana">
+        <select class="semana-elegida">
+            <option value="semana 1">Semana 1</option>
+            <option value="semana 2">Semana 2</option>
+        </select>
+    </div>`;
+    contenedor.innerHTML += htmlCode;
+}
+
+button.addEventListener("click", () =>{
+    let confirmar = confirm("¿Realmente quuieres confirmar las mesas?");
+    if (confirmar) {
+        document.body.removeChild(button);
+        let elementos = document.querySelectorAll(".semana");
+        let SemanaElegidas = document.querySelectorAll(".semana-elegida");
+        for(elemento in elementos){
+            semana = elementos[elemento];
+            semana.innerHTML = SemanaElegidas[elemento].value;
+        }
+    }
+});
