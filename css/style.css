@@ -3,16 +3,4 @@ body{
     font-family: sans-serif;
 }
 
-.container{
-    background-color: aliceblue;
-    padding: 40px;
-    border: solid 1px #ccc;
-}
-
-.input-pruebat{
-    border: solid 1px #000;
-    border-radius: 5px;
-    padding: 6px;
-    color: darkgray;
-}
 

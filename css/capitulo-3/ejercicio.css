@@ -1,0 +1,79 @@
+body{
+	font-family: sans-serif;
+	color: #333;
+}
+
+.formularioNota{
+	margin-top: 60px;
+	text-align: center;
+	background: #48e;
+	padding: 10px;
+	box-sizing: border-box;
+	display: flex;
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+h1{
+	margin: 0;
+	flex-grow: 1;
+	color: #fff;
+	margin-right: 30px
+}
+
+input{
+	width: 30px;
+	border: none;
+}
+
+input[type="button"]{
+	width: auto;
+	margin-left: 7px;
+	color: #48e;
+	background: #fff;
+	letter-spacing: 1px;
+}
+
+.modal-background{
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+	opacity: 0;
+}
+
+.modal{
+	background: #fff;
+	width: 500px;
+	margin: auto;
+	text-align: center;
+}
+
+.resultado{
+	font-size: 23px;
+	margin-bottom: 5px;
+}
+
+@keyframes aparecer{
+	0%{
+		opacity: 0;
+		display: flex;
+	}
+	100%{
+		opacity: 1;
+		display: flex;
+	}
+}
+
+.green{
+	color: #0f0;
+}
+
+.red{
+	color: #f00;
+}
