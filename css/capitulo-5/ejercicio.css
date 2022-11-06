@@ -1,0 +1,32 @@
+body{
+    font-family: sans-serif;
+    color: #222;
+}
+
+#getInfo{
+    font-size: 20px;
+    margin: 20px;
+}
+
+.resultado{
+    background: #efefef;
+    padding: 20px;
+    font-size: 19px;
+}
+/* #btnNombre, #btnEdad{
+    font-size: 20px;
+    margin: 20px;
+} */
+
+/* .nombre, .edad{
+    background: #000;
+    color: #fff;
+    display: inline-block;
+    margin: 5px;
+    padding: 15px;
+    font-size: 32px;
+} */
+
+/* .nombre{
+    background: #b00;
+} */
